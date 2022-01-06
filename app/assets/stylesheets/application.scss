@@ -14,15 +14,63 @@
  *= require_self
  */
 
- header {
-   border-bottom: 1px solid gray;
- }
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
- .header-icon {
-   width: 50px;
-   height: 50px;
- }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+}
 
- footer {
-   border-top: 1px solid gray;
- }
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+p {
+  font-size: 1.0em;
+}
+
+.center-title {
+  text-align: center;
+  margin-top: 1.5em;
+  margin-bottom: 1.0em;
+}
+
+header {
+  border-bottom: 1px solid gray;
+  background-color: rgb(65, 65, 173);
+}
+
+.header-icon {
+  width: 50px;
+  height: 50px;
+}
+
+footer {
+  border-top: 1px solid gray;
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  height: auto !important;
+}
+
+.btn {
+  width: 100%;
+  margin-bottom: 15px;
+}

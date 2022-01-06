@@ -1,2 +1,6 @@
 <h1>Test Home page</h1>
-<%= link_to 'Create new account', new_user_path, class: 'btn btn-primary' %>
+<% if logged_in? %>
+  <%= render 'index' %>
+<% else %>
+  <%= render template: 'sessions/new' %>
+<% end %>
