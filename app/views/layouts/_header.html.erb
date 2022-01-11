@@ -3,8 +3,11 @@
     <%= link_to image_tag('icons-fb-50.png', class: 'header-icon'), root_path %>
     <nav>
       <ul class='nav'>
-        <li><%= link_to image_tag('icons-home-50.png', class: 'header-icon'), root_path %>
-        <li><%= link_to image_tag('icon-people.png', class: 'header-icon'), '#' %>
+        <li><%= link_to image_tag('icons-home-50.png', class: 'header-icon'), root_path %></li>
+        <li><%= link_to image_tag('icon-people.png', class: 'header-icon'), '#' %></li>
+        <% if logged_in? %>
+        <li><%= link_to 'Edit profile', edit_user_path(current_user) %></li>
+        <% end %>
       </ul>
     </nav>
   </div>
