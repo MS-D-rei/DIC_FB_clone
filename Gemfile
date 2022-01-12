@@ -7,6 +7,7 @@ gem 'rails', '~> 6.0.3'
 gem 'bcrypt'
 gem 'faker'
 gem 'carrierwave', '~> 2.0'
+gem 'mini_magick'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 gem 'sass-rails', '>= 6'
@@ -20,6 +21,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'debug'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.2'
   gem 'spring'
