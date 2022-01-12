@@ -3,11 +3,15 @@ class PostsController < ApplicationController
   before_action :correct_user, only: %i[edit update destroy]
 
   def edit
-
   end
 
   def update
-
+    if @post.update(post_params)
+      flash[:success] = 'Post updated'
+      redirect_to root_url
+    else
+      render :edit
+    end
   end
 
   def create

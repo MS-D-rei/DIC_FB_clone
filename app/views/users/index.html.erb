@@ -2,9 +2,9 @@
 logged in
 <%= link_to 'Log out', logout_path, method: :delete %>
 <div class='row'>
-  <div class='col-3'>
+  <div class='col'>
   </div>
-  <div class='col-4 content-space'>
+  <div class='col-5 content-space'>
     <section>
       <%= render 'shared/post_form' %>
     </section>
@@ -12,7 +12,7 @@ logged in
       <%= render @posts %>
     </ol>
   </div>
-  <div class='col-3'>
+  <div class='col'>
   </div>
 </div>
 <% else %>
