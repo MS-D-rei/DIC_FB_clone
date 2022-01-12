@@ -1,6 +1,6 @@
 <h1>Test Home page</h1>
 <% if logged_in? %>
-  <%= render 'index' %>
+  <%= render template: 'users/index' %>
 <% else %>
   <%= render template: 'sessions/new' %>
 <% end %>
