@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def index
     @posts = current_user.posts if logged_in?
+    @post = Post.new
   end
 
   def new
@@ -39,14 +40,6 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
-  end
-
-  def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:danger] = 'Please log in.'
-      redirect_to login_url
-    end
   end
 
   def correct_user
