@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :logged_in_user, only: %i[create destroy]
+  before_action :logged_in_user, only: %i[create confirm destroy]
   before_action :correct_user, only: %i[edit update destroy]
 
   def edit
@@ -16,12 +16,18 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
-    if @post.save
+    if params[:back]
+      render root_url
+    elsif @post.save
       flash[:success] = 'post created.'
       redirect_to root_url
     else
       render 'users/index'
     end
+  end
+
+  def confirm
+    @post = current_user.posts.build(post_params)
   end
 
   def destroy

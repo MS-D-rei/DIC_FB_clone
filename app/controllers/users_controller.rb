@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :correct_user, only: %i[edit update]
 
   def index
-    @posts = current_user.posts if logged_in?
+    @posts = Post.all if logged_in?
     @post = Post.new
   end
 
